@@ -2099,6 +2099,18 @@ button:hover:active:after,
   position: relative;
 }
 
+
+.features.full-width section {
+  padding: 3.5em 3em 1em 0 !important;
+  width: 100% !important;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+
+
+
+
 .features section:nth-child(-n + 2) {
   border-top-width: 0;
 }
