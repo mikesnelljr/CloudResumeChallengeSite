@@ -1933,7 +1933,7 @@ button,
   color: #ffffff !important;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.8em;
   font-weight: bold;
   height: calc(4.75em + 2px);
   letter-spacing: 0.25em;
@@ -1944,6 +1944,7 @@ button,
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.859),
     -2px 2px 4px rgba(255, 255, 255, 0.826);
