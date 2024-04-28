@@ -16,16 +16,40 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+    <style>
+      #sidebar {
+        background: #00d0ff;
+        text-align: center; /* To center the image */
+      }
+
+      .sidebar-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Media query for screens wider than 600px */
+      @media (min-width: 1000px) {
+        .sidebar-img {
+          content: url("images/blog3.jpg");
+        }
+      }
+
+      /* Media query for screens up to 999px wide */
+      @media (max-width: 999px) {
+        .sidebar-img {
+          content: url("images/blog2.png");
+        }
+      }
+    </style>
   </head>
 
   <body class="is-preload">
     <!-- Sidebar -->
-    <section id="sidebar" style="background: #00d0ff">
+    <section id="sidebar">
       <div class="inner">
-        <img
-          src="images\blog3.jpg"
-          style="max-width: 100%; height: auto; display: block; margin: 0 auto"
-        />
+        <img class="sidebar-img" alt="Responsive Image" />
         <nav>
           <ul>
             <li><a href="#top">TOP OF PAGE</a></li>

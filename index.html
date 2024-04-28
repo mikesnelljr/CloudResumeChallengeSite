@@ -60,7 +60,11 @@
 
       <div id="wrapper">
         <!-- One - about me -->
-        <section id="one" class="wrapper style1 fullscreen fade-up">
+        <section
+          id="one"
+          class="wrapper style1 fullscreen fade-up"
+          style="position: relative"
+        >
           <div
             style="
               display: flex;
@@ -69,13 +73,9 @@
               align-items: center; /* Center horizontally */
               width: 100%;
               height: 100%;
+              position: relative;
+              z-index: 1; /* Ensure content is on top of overlay */
               padding: 4%;
-              background-color: rgba(
-                0,
-                0,
-                0,
-                0.378
-              ); /* Slightly transparent black background */
             "
           >
             <h2
@@ -89,11 +89,10 @@
             </h2>
             <p
               style="
-                    text-align: center;
-                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.585);
-                    margin: 0; /* Remove default margin */
-                    text-
-                    "
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.585);
+                margin: 0; /* Remove default margin */
+              "
             >
               <strong>
                 I am an aspiring cloud engineer with a knack for creative
@@ -130,6 +129,8 @@
               </li>
             </ul>
           </div>
+          <div class="overlay"></div>
+          <!-- Transparent black overlay -->
         </section>
       </div>
 
