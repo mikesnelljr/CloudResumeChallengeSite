@@ -3810,3 +3810,29 @@ body.is-ie #sidebar > .inner {
     background-attachment: scroll;
   }
 } */
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 80%; /* Set container width to 80% of the viewport */
+  overflow: hidden; /* Hides the overflow of the overlay */
+}
+
+.image-container img {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Overlay matches the width of the image */
+  height: 100%; /* Overlay matches the height of the image */
+  background-color: #00d0ff3c; /* Light blue with 20% opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-link:hover .overlay {
+  opacity: 1;
+}
