@@ -2100,7 +2100,6 @@ button:hover:active:after,
   position: relative;
 }
 
-
 /* .features.full-width{
   display: -moz-flex;
   display: -webkit-flex;
@@ -2124,9 +2123,6 @@ button:hover:active:after,
   border-bottom-color: #303030; 
   position: relative;
 } */
-
-
-
 
 .features section:nth-child(-n + 2) {
   border-top-width: 0;
@@ -2997,6 +2993,7 @@ body.is-ie .spotlights > section {
   justify-content: center;
   width: 50em;
   -ms-flex: 1;
+  flex: 1;
 }
 
 /* .spotlights > section > .content > .inner {
@@ -3575,13 +3572,13 @@ body.is-ie #sidebar > .inner {
 			opacity: 0;
 		} */
 
-body.is-preload #sidebar nav ul li {
-  /* -moz-transform: translateY(2em);
+/* body.is-preload #sidebar nav ul li {
+  -moz-transform: translateY(2em);
 			-webkit-transform: translateY(2em);
 			-ms-transform: translateY(2em);
 			transform: translateY(2em);
-			opacity: 0; */
-}
+			opacity: 0;
+} */
 
 @media screen and (max-width: 1280px) {
   #sidebar {
@@ -3691,12 +3688,6 @@ body.is-preload #sidebar nav ul li {
   }
 }
 
-
-
-
-
-
-
 /* Intro */
 
 #intro {
@@ -3749,7 +3740,6 @@ body.is-preload #sidebar nav ul li {
   z-index: 0; /* Put the overlay behind the content */
 }
 
-
 #one p {
   font-size: 1.25em;
 }
@@ -3785,12 +3775,12 @@ body.is-preload #sidebar nav ul li {
   background-attachment: fixed;
   background-image: url("images/grid2.jpg");
   /* background-image: url("images/dude4.png"); */
-  /* background-position: top left;
+/* background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-top: 1px solid white;
   border-bottom: 1px solid white; */
-}
+/* } */
 
 /* #two p {
   font-size: 1.25em;
@@ -3812,11 +3802,11 @@ body.is-preload #sidebar nav ul li {
     background-image: url("images/computer.jpg");
     background-size: cover;
     overflow-y: auto; /* Enable vertical scrolling for content */
-  }
-}
+/* }
+} */
 /* 
 @media screen and (max-width: 1280px) {
   #two {
     background-attachment: scroll;
   }
-} */ */ */
+} */
