@@ -61,29 +61,72 @@
                 width: 100%;
               "
             >
+            <h1>
+              Creating a Static Website with AWS
+            </h1>
+            <p><i>
+              Inspired by the Cloud Resume Challenge created by Forrest Brazeal.
+            </i></p>
+            <!-- <img src="../images/blog1.png" style="width: 100%" /> -->
+
+            <br />
+
               <h3 style="text-decoration: underline">
-                Establishing the foundations - Cloud Resume Challenge
+                Establishing the Foundations - HTML & CSS
               </h3>
-              <img src="../images/blog1.png" style="width: 50%" />
               <br />
               <p style="text-align: center">
                 <!-- Center-align the paragraphs -->
                 I would like to start off by saying that I am by no means a
                 professional web developer. It has been quite a long time since
                 I have played with web development. With that in mind, I decided
-                to start off with a template, reverse engineer it and then
+                to start with a template, reverse engineer it and then
                 customize. I got the base for this site from html5up.net and
                 this particular template is called "hyperspace". I spent more
                 time on this part than I probably should have but what can I
                 say? Creative works are an outlet of mine. So, why not give it
-                the ol' razzle dazzle while I duct tape some things together?
+                the ol' razzle dazzle while I duct tape some things together? 
+
                 <br /><br />
-                This site was built locally on my machine in vscode and pushed
-                to GitHub. And from there GitHub syncs with AWS to populate the
-                files in S3 to feed cloudfront.
+                <img src="../images/templatecustom2.png" style="width: 100%" />
                 <br /><br />
-                Link to template: https://html5up.net/hyperspace
+                Link to template: <a href="https://html5up.net/hyperspace" style="color: aqua;">Hyperspace Template Demo by html5up.net</a>
+                <br /><br />
+                If you are curious about the artwork on the site (checkered orb image, about me section background with the guy touching the computer, the retro sun blog image and others) - they are some of my creations. 
+                The perspective line artwork in the background on the home section came with the hyperspace template.
               </p>
+
+              <h3 style="text-decoration: underline">
+                Initializing CI/CD - GitHub, AWS Codepipeline & S3
+              </h3>
+              <br />
+              <p>
+                From the beginning of this project, I knew I wanted to use CI/CD. 
+                Since I work from 2 different machines (desktop and laptop while on the go), I had to make sure
+                that the project remained efficient from a management perspective right from the start. I needed
+                my files to remain current & consistent on both machines as I developed the bones of this site and to have
+                the middleman in place for when I pushed it to S3 (more on that later).
+                I chose GitHub for this since I had already had some experience using GitLab throughout
+                my degree program recently and wanted to take this opportunity to get more familiar with
+                GitHub as well. 
+                <br /><br />
+                Once I had the foundation for the site laid out (main page, blog page and this blogpost), I was ready to push 
+                the repository into an S3 bucket. For this, I set up a codepipeline in AWS using you guessed it... "AWS Codepiple".
+                This process is straight forward as it has the ability to interact with GitHub directly and listen for updates. 
+                With the codepipeline set up, my repo was now placed in an S3 bucket and maintains a 1 to 1 replica of my repo. 
+                Making it easy and efficient to update my pages. 
+                <br /><br />
+                Any time I update my repo and push it to GitHub, AWS Codepiple will pull it and update my S3 bucket. 
+                <br /><br />
+              </p>
+              <h3 style="text-decoration: underline">
+               Cloundfront & Enhancing CI/CD - AWS Cloudfront, Lambda, Codepipeline
+              </h3>
+              <p>
+
+
+              </p>
+              <br />
             </section>
           </div>
         </div>
