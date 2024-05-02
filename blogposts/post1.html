@@ -115,14 +115,14 @@
                 needed my files to remain current & consistent on both machines
                 as I developed the bones of this site and to have the middleman
                 in place for when I pushed it to S3 (more on that later). I
-                chose GitHub for this since I had already had some experience
-                using GitLab throughout my degree program recently and wanted to
-                take this opportunity to get more familiar with GitHub as well.
+                chose GitHub for this since I already had some experience using
+                GitLab throughout my degree program recently and wanted to take
+                this opportunity to get more familiar with GitHub as well.
                 <br /><br />
                 Once I had the foundation for the site laid out (main page, blog
                 page and this blogpost), I was ready to push the repository into
-                an S3 bucket. For this, I set up a codepipeline in AWS using you
-                guessed it... "AWS Codepipeline". This process is straight
+                an S3 bucket. For this, I set up a code pipeline in AWS using
+                you guessed it... "AWS Codepipeline". This process is straight
                 forward as codepipeline can interact with GitHub directly for
                 the initial sync and listen for updates. With the codepipeline
                 set up, my repo was now placed in an S3 bucket and maintains a 1
