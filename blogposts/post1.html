@@ -65,7 +65,7 @@
               <p>
                 <i>
                   Inspired by the Cloud Resume Challenge created by Forrest
-                  Brazeal.
+                  Brazeal
                 </i>
               </p>
               <!-- <img src="../images/blog1.png" style="width: 100%" /> -->
@@ -123,25 +123,121 @@
                 page and this blogpost), I was ready to push the repository into
                 an S3 bucket. For this, I set up a codepipeline in AWS using you
                 guessed it... "AWS Codepipeline". This process is straight
-                forward as codepipeline has the ability to interact with GitHub
-                directly for the initial sync and listen for updates. With the
-                codepipeline set up, my repo was now placed in an S3 bucket and
-                maintains a 1 to 1 replica of my repo. Making it easy and
-                efficient to update my pages.
+                forward as codepipeline can interact with GitHub directly for
+                the initial sync and listen for updates. With the codepipeline
+                set up, my repo was now placed in an S3 bucket and maintains a 1
+                to 1 replica of my repo. Making it easy and efficient to update
+                my pages
                 <br /><br />
                 <img src="../images/CICD.jpeg" style="width: 80%" />
                 <br /><br />
-                Any time I update my repo and push it to GitHub, AWS Codepiple
-                will pull it and update my S3 bucket which will be used as the
-                origin for cloudfront.
+                Any time I update my repo and push it to GitHub, AWS
+                Codepipeline will pull it and update my S3 bucket which will be
+                used as the origin for CloudFront.
                 <br /><br />
               </p>
               <h3 style="text-decoration: underline">
                 Cloundfront & Enhancing CI/CD - AWS Cloudfront, Lambda,
                 Codepipeline
               </h3>
-              <p></p>
               <br />
+              <p>
+                Now that I had my files synced to my GitHub repo, I needed to
+                create the Cloudfront Distribution to make my static site
+                available in a secure and efficient way. This means keeping my
+                origin S3 bucket private and allowing Cloudfront to do the
+                talking. In light of recent news (<a
+                  href="https://blog.limbus-medtec.com/the-aws-s3-denial-of-wallet-amplification-attack-bc5a97cc041d"
+                  style="color: aqua"
+                  >"The AWS S3 Denial of Wallet amplification attack"</a
+                >) posted over on medium and all the backlash from it, I was
+                certaintly a little extra paranoid about how I am going about
+                creating this project... Though there has been correspondence
+                from AWS saying they are looking into resolving this issue. And
+                I would hope we see some promising updates coming up after this
+                much heat! <br /><br />
+                I decided to purchase my domain name through a 3rd party
+                (Namecheap) to isolate it from this particular AWS account in
+                case I want to easily move it some other day. Setting up the
+                distribution and plugging in my domain was fairly
+                straightforward as there are reputable guides from both AWS and
+                Namecheap for this. Once my domain was registered, I used ACM
+                (Amazon Credential Manager) to procure the SSL certificate. With
+                the domain and SSL in hand, I simply added this information to
+                the Cloudfront distro as a CNAME & made the corresponding
+                records in Namecheap.
+                <br /><br />
+                With the Cloudfront distro up and running fine, there was a
+                tweak I wanted to make to increase the QoL while working on this
+                project/website. The CICD enhancement is automating the
+                Cloudfront cache invalidations when the S3 bucket gets fresh
+                files from GitHub in the Codepipeline.
+                <br /><br />
+                To accomplish the automated Cloudfront validations, I added an
+                additional stage to the Codepipeline after the s3 bucket gets
+                populated. This additional stage runs a Lambda function that
+                does the heavy lifting for this automation. The Lambda function
+                itself contains code sourced from a GitHub repo posted by the
+                user "dhruv9911". The code is setup to use user parameters for
+                the Cloudfront ID and paths to be invalidated, which can be set
+                within the action group of the codepipeline stage. With this
+                Lambda function and additional codepipeline stage in place. The
+                entire CI/CD process is automated and every update that I make
+                to the site gets pushed to Cloudfront as soon as updated files
+                arrive in the S3 bucket.
+                <br /><br />
+                Link to Lambda code:
+                <a
+                  href="https://github.com/dhruv9911/Cloudfront-Invalidation/blob/main/lambda_function.py"
+                  style="color: aqua"
+                  >"Cloudfront-Invalidation by dhruv9911"</a
+                >
+                <br /><br />
+              </p>
+              <h3 style="text-decoration: underline">
+                Completed AWS Static Website Architectual Diagram & Conclusions
+              </h3>
+              <br />
+              <div class="image-container">
+                <img
+                  src="../images/diagram.jpeg"
+                  alt="Image"
+                  style="width: 100%"
+                />
+                <div class="overlay"></div>
+              </div>
+              <br />
+              <p>
+                In the long run, I am not sure if I will continue to use a
+                static site or eventually cave in and use a more robust
+                CMS/dynamic solution. Only time will tell. For now and the
+                foreseeable future, I hope you enjoy your stay here at
+                mikesnell.cloud.
+                <br /><br />
+                - Mike Snell
+              </p>
+              <div class="image-wrapper">
+                <a href="../index.html" class="image-link">
+                  <div class="image-container">
+                    <img
+                      src="../images/returnhome.jpg"
+                      alt="Image"
+                      style="width: 100%"
+                    />
+                    <div class="overlay1"></div>
+                  </div>
+                </a>
+                <a href="../blog.html" class="image-link">
+                  <div class="image-container">
+                    <img
+                      src="../images/returnblog.jpg"
+                      alt="Image"
+                      style="width: 100%"
+                    />
+                    <div class="overlay2"></div>
+                  </div>
+                </a>
+              </div>
             </section>
           </div>
         </div>
