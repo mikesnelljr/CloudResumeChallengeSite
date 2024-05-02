@@ -173,7 +173,7 @@
                 Cloudfront cache invalidations when the S3 bucket gets fresh
                 files from GitHub in the Codepipeline.
                 <br /><br />
-                To accomplish the automated Cloudfront validations, I added an
+                To accomplish the automated Cloudfront invalidations, I added an
                 additional stage to the Codepipeline after the s3 bucket gets
                 populated. This additional stage runs a Lambda function that
                 does the heavy lifting for this automation. The Lambda function
